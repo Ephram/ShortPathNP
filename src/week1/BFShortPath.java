@@ -1,7 +1,7 @@
 package week1;
 
-public class ShortPath2 {
+public class BFShortPath {
 	public static void main(String[] args) {
-		
+			
 	}
 }
