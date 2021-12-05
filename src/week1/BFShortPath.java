@@ -9,8 +9,6 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-import week4.NodeKnapsack;
-
 public class BFShortPath {
 
 	public static void main(String[] args) {
@@ -37,15 +35,39 @@ public class BFShortPath {
 //		list4.add(new EdgeNode(4, 2));
 //		list4.add(new EdgeNode(3, 4));
 //		graph.put(5, list4);
-		
-		
-		
-		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_8_4.txt"); // -36
 
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_8_4.txt"); // -36
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_9_8.txt"); // null
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_10_8.txt"); // -41
+			
+		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_14_16.txt"); // -130
+		
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_20_32.txt"); // -242 X
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_22_64.txt"); // -431
+		
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_21_64.txt"); // null
+		
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_30_256.txt"); // -961
+		
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_40_1024.txt"); // -2361
+		
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_44_2048.txt"); // -3127
+			
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t1case.txt"); // -2
+		
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t2case.txt"); // null
+
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g1.txt"); // null
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g2.txt"); //null
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g3.txt"); // -12
+
+		
+		
 		Map<Integer, List<EdgeNode>> graph = new HashMap<Integer, List<EdgeNode>>();
 
 		List<Integer> list = new ArrayList<Integer>();
-		
+
+		int numberofVertices = 0;
 		try {
 			Scanner scanner = new Scanner(file);
 			while (scanner.hasNextLine()) {
@@ -53,12 +75,12 @@ public class BFShortPath {
 
 				if (line.length != 2) {
 					int v = Integer.parseInt(line[1]);
-					
+
 					if (!graph.containsKey(v)) {
 						List<EdgeNode> edgeNodeList = new ArrayList<EdgeNode>();
 						graph.put(v, edgeNodeList);
 					}
-					
+
 					if (graph.containsKey(v)) {
 						List<EdgeNode> nodeV = graph.get(v);
 
@@ -68,6 +90,8 @@ public class BFShortPath {
 						nodeV.add(new EdgeNode(headV, edgeCost));
 					}
 
+				} else {
+					numberofVertices = Integer.parseInt(line[0]);
 				}
 			}
 		} catch (FileNotFoundException e) {
@@ -78,12 +102,12 @@ public class BFShortPath {
 
 		// testing short path Bellman Ford Algo
 		BFShortPath path = new BFShortPath();
-		path.shortPath(graph);
+		System.out.println(path.shortPath(graph, numberofVertices));
 	}
 
-	public Integer shortPath(Map<Integer, List<EdgeNode>> graph) {
+	public Integer shortPath(Map<Integer, List<EdgeNode>> graph, int numberofVertices) {
 
-		int[][] A = new int[graph.size() + 1][graph.size() + 1];
+		int[][] A = new int[numberofVertices + 1][numberofVertices + 1];
 
 		// base case
 		A[0][1] = 0;
@@ -111,19 +135,24 @@ public class BFShortPath {
 
 		// detecting cycle
 		Set<Integer> vertices = graph.keySet();
+		int min = 1_000_000;
 		for (Integer v : vertices) {
 			int actualresult = A[A.length - 2][v];
 			int additionalresult = A[A.length - 1][v];
-
+			min = Math.min(min, actualresult);
+			
 			if (actualresult != additionalresult) {
 				System.out.println("cycle detected ");
 				return null;
 			}
 		}
-
-		return 0;
+		
+		
+		
+		return min;
 	}
-
+	
+	
 	public int getMinCase2(List<EdgeNode> list, int[][] A, int i) {
 
 		if (!list.isEmpty()) {
