@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class BFShortPath {
 
@@ -51,20 +52,54 @@ public class BFShortPath {
 		}
 
 		for (int i = 1; i < A.length - 1; i++) {
-			
-			
-			for (int v = 1; v < A[i].length; v++) {
 
-				int case1 = A[i - 1][v];
+			Set<Integer> vertices = graph.keySet();
 
-				int w = 0;
-				int Cwv = 0;
-				int case2 = (A[i - 1][w]) + (Cwv);
+			for (Integer vertex : vertices) {
 
-				A[i][v] = Math.min(case1, case2);
+				int case1 = A[i - 1][vertex];
+
+				List<EdgeNode> comingVerticesList = graph.get(vertex);
+
+				int case2 = getMinCase2(comingVerticesList, A, i);
+
+				A[i][vertex] = Math.min(case1, case2);
+			}
+
+//			for (int v = 1; v < A[i].length; v++) {
+//
+//				int case1 = A[i - 1][v];
+//
+//				int w = 0;
+//				int Cwv = 0;
+//				int case2 = (A[i - 1][w]) + (Cwv);
+//
+//				A[i][v] = Math.min(case1, case2);
+//
+//			}
+		}
+	}
+
+	public int getMinCase2(List<EdgeNode> list, int[][] A, int i) {
+
+		if (!list.isEmpty()) {
+
+			int w = list.get(0).getV();
+			int Cwv = list.get(0).getEdgeCost();
+			int min = (A[i - 1][w]) + (Cwv);
+
+			for (int ii = 1; ii < list.size(); ii++) {
+				w = list.get(ii).getV();
+				Cwv = list.get(ii).getEdgeCost();
+				int min2 = (A[i - 1][w]) + (Cwv);
+
+				min = Math.min(min, min2);
 
 			}
+
+			return min;
 		}
+		return 1_000_000;
 	}
 
 }
