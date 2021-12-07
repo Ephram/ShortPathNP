@@ -3,6 +3,7 @@ package week1;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,7 +61,7 @@ public class BFShortPath {
 
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_44_2048.txt"); // -3127
 
-		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t1case.txt"); // -2
+		File file = new File("D:\\programming\\projects\\ShsortPathNP\\src\\week1\\t1case.txt"); // -2
 
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t2case.txt"); // null
 
@@ -145,19 +146,34 @@ public class BFShortPath {
 		// detecting cycle
 		Set<Integer> vertices = graph.keySet();
 		int min = 1_000_000_000;
-		int saveV = 0;
 		for (Integer v : vertices) {
 			int actualresult = A[A.length - 2][v];
 			int additionalresult = A[A.length - 1][v];
 
 			if (actualresult < min) {
-				saveV = v;
 				min = actualresult;
 			}
 			if (actualresult != additionalresult) {
 				System.out.println("cycle detected ");
 				return null;
 			}
+		}
+
+		// getting last V
+
+		Integer[] arr = graph.keySet().toArray(new Integer[graph.size()]);
+		
+		Arrays.sort(arr);
+		
+		int minSum = A[A.length - 2][A.length - 1];
+		int saveV = A.length - 1;
+
+		for (int i = saveV-1; i > 0; i--) {
+			if (minSum > A[A.length - 2][i]) {
+				minSum = A[A.length - 2][i];
+				saveV = i;
+			}
+
 		}
 
 		List<Integer> pathList = reverseDetection(A, numberofVertices, saveV, graph);
@@ -174,7 +190,7 @@ public class BFShortPath {
 		int minmin = -1_000_000_000;
 
 		try {
-			while (graph.get(v).isEmpty() != true) {
+			while (/* graph.get(v).isEmpty() != true */ /* v > 1 */ minmin < 0) {
 
 				List<EdgeNode> edgeNodes = graph.get(v);
 
@@ -191,14 +207,14 @@ public class BFShortPath {
 						w = w2;
 						min = min2;
 
-						if (min > minmin) {
-							minmin = min;
-						}
+//						if (min > minmin) {
+//							minmin = min;
+//						}
 					}
 
 				}
 				v = w;
-//				i--;
+				minmin = min;
 				System.out.println(i);
 				System.out.println(w);
 				list.add(w);
