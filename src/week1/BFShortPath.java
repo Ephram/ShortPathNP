@@ -61,14 +61,23 @@ public class BFShortPath {
 
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_44_2048.txt"); // -3127
 
-		File file = new File("D:\\programming\\projects\\ShsortPathNP\\src\\week1\\t1case.txt"); // -2
-
+//		File file = new File("D:\\programming\\projects\\ShsortPathNP\\src\\week1\\t1case.txt"); // -2
+		
+		
+		
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t2case.txt"); // null
 
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g1.txt"); // null
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g2.txt"); //null
-//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g3.txt"); // -12
+		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g3.txt"); // right answer -19
+			
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\testcaseAbdulBariYoutube.txt"); //  -2
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\testcaseAbdulBariYoutube2.txt"); //  null
+		
+		
 
+		
+		
 		Map<Integer, List<EdgeNode>> graph = new HashMap<Integer, List<EdgeNode>>();
 
 		List<Integer> list = new ArrayList<Integer>();
