@@ -37,7 +37,10 @@ public class BFShortPath {
 //		list4.add(new EdgeNode(3, 4));
 //		graph.put(5, list4);
 
-//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_8_4.txt"); // -36
+		
+		
+//		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_8_4.txt"); //-36
+
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_9_8.txt"); // null
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_10_8.txt"); // -41
 
@@ -61,15 +64,14 @@ public class BFShortPath {
 
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_44_2048.txt"); // -3127
 
-//		File file = new File("D:\\programming\\projects\\ShsortPathNP\\src\\week1\\t1case.txt"); // -2
-		
+		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\t1case.txt"); //-2
 		
 		
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t2case.txt"); // null
 
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g1.txt"); // null
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g2.txt"); //null
-		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g3.txt"); // right answer -19
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g3.txt"); // right answer -19
 			
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\testcaseAbdulBariYoutube.txt"); //  -2
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\testcaseAbdulBariYoutube2.txt"); //  null
