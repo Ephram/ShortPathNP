@@ -44,7 +44,7 @@ public class BFShortPath {
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_9_8.txt"); // null
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_10_8.txt"); // -41
 
-//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_14_16.txt"); // -130 //
+		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_14_16.txt"); // -130 //
 		// path 1 12
 		// 15
 
@@ -64,7 +64,10 @@ public class BFShortPath {
 
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_44_2048.txt"); // -3127
 
-		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\t1case.txt"); //-2
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t1case.txt"); //-2
+		
+		
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t3case_coursera.txt"); //-2
 		
 		
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t2case.txt"); // null
@@ -153,6 +156,8 @@ public class BFShortPath {
 				}
 			}
 		}
+		
+		
 
 		// detecting cycle
 		Set<Integer> vertices = graph.keySet();

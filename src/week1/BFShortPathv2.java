@@ -16,19 +16,18 @@ public class BFShortPathv2 {
 
 //		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\testcaseAbdulBariYoutube3.txt"); 
 //		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\t1case.txt");
-//		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_8_4.txt"); //-36
+		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_8_4.txt"); //-36
 //		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_10_8.txt"); //-41
 //		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_14_16.txt"); //-130
 
 
-
+		
 
 //		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_39_1024.txt"); //-2123
 		
 		
-		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\g3.txt"); //-19
+//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g3.txt"); //-19
 		
-	
 
 		Map<Integer, List<EdgeNode>> graph = new HashMap<Integer, List<EdgeNode>>();
 
