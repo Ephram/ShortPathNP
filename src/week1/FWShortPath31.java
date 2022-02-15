@@ -28,8 +28,8 @@ public class FWShortPath31 {
 		// File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g2.txt"); //null
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g3.txt"); // right answer -19
 //		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t3case.txt"); // right answer -8
-		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t4case.txt"); // right answer -10
-		
+		File file = new File("D:\\programming\\projects09022022\\ShortPathNP\\src\\week1\\t4case.txt"); // right answer -10
+
 		// File file = new
 		// File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\testcaseAbdulBariYoutube.txt");
 		// // -2
@@ -149,10 +149,7 @@ public class FWShortPath31 {
 						System.out.println(next[ii][jj] + "-" + next[ii][kk]);
 					}
 
-					if (min <= -8) {
-						System.out.println("yes -8 " + kk + "-" + ii + "-" + jj);
-						break;
-					}
+					
 				}
 			}
 		}
