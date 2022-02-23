@@ -12,11 +12,14 @@ public class FWShortPath31 {
 
 	public static void main(String[] args) {
 
-//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\input_random_8_4.txt"); // -36
+		// File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_8_4.txt"); // -36
+
+//		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_10_8.txt"); // -41
+		 File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_22_64.txt"); // -431
 
 		// File file = new
 		// File("D:\\javamars20172\\ShortPathNP\\src\\week1\\t1case.txt"); // -2
-//		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\t3casegeeksforgeeks.txt");
+		// File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\t3casegeeksforgeeks.txt");
 
 		// File file = new
 		// File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t2case.txt"); //
@@ -26,9 +29,9 @@ public class FWShortPath31 {
 		// File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g1.txt"); // null
 		// File file = new
 		// File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g2.txt"); //null
-//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g3.txt"); // right answer -19
-//		File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t3case.txt"); // right answer -8
-		File file = new File("D:\\programming\\projects09022022\\ShortPathNP\\src\\week1\\t4case.txt"); // right answer -10
+		// File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g3.txt"); // right answer -19
+		// File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t3case.txt"); // right answer -8
+		// File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\t4case.txt"); // right answer -10
 
 		// File file = new
 		// File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\testcaseAbdulBariYoutube.txt");
@@ -81,6 +84,7 @@ public class FWShortPath31 {
 	}
 
 	public void shortPath(int n, Map<Integer, List<EdgeNode>> graph) {
+
 		int i = n + 1;
 		int j = n + 1;
 		int k = n + 1;
@@ -90,7 +94,7 @@ public class FWShortPath31 {
 
 		int kk = 0;
 
-//base case		
+		// base case
 		boolean isInfinity = true;
 
 		for (int ii = 1; ii < i; ii++) {
@@ -125,6 +129,9 @@ public class FWShortPath31 {
 		// end of ii forloop
 		// base case end
 
+		int minimumOfMin = 1_000_000_000;
+		int minI = 0, minJ = 0;
+
 		for (kk = 1; kk < k; kk++) {
 			for (int ii = 1; ii < i; ii++) {
 				for (int jj = 1; jj < j; jj++) {
@@ -149,11 +156,31 @@ public class FWShortPath31 {
 						System.out.println(next[ii][jj] + "-" + next[ii][kk]);
 					}
 
-					
+					if (min < minimumOfMin) {
+						minimumOfMin = min;
+						minI = ii;
+						minJ = jj;
+
+					}
+
 				}
 			}
 		}
-		System.out.println("some");
+
+		// getting path
+		List<Integer> list = new ArrayList<>();
+		list.add(minI);
+		int pathNum = next[minI][minJ];
+		list.add(pathNum);
+
+		while (minJ != pathNum) {
+			int tempPathnum = pathNum;
+			pathNum = next[pathNum][minJ];
+			list.add(pathNum);
+		}
+		// end of getting path
+
+		System.out.println("min of mins" + minimumOfMin);
 
 	}
 	// end shortpath method
