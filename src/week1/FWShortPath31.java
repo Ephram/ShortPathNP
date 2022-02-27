@@ -14,8 +14,8 @@ public class FWShortPath31 {
 
 		// File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_8_4.txt"); // -36
 
-//		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_10_8.txt"); // -41
-		 File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_22_64.txt"); // -431
+		// File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_10_8.txt"); // -41
+		// File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\input_random_22_64.txt"); // -431
 
 		// File file = new
 		// File("D:\\javamars20172\\ShortPathNP\\src\\week1\\t1case.txt"); // -2
@@ -29,7 +29,7 @@ public class FWShortPath31 {
 		// File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g1.txt"); // null
 		// File file = new
 		// File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g2.txt"); //null
-		// File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\g3.txt"); // right answer -19
+		File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\g3.txt"); // right answer -19
 		// File file = new File("D:\\programming\\projects\\ShortPathNP\\src\\week1\\t3case.txt"); // right answer -8
 		// File file = new File("D:\\javamars20172\\ShortPathNP\\src\\week1\\t4case.txt"); // right answer -10
 
@@ -186,3 +186,6 @@ public class FWShortPath31 {
 	// end shortpath method
 
 }
+
+
+//right answer -19 
